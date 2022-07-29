@@ -1,0 +1,65 @@
+22-July 2022 12:45 am
+What is Arduino?
+Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating a motor, turning on an LED, publishing something online. You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the Arduino programming language (based on Wiring), and the Arduino Software (IDE), based on Processing.
+
+Why Arduino?
+Thanks to its simple and accessible user experience, Arduino has been used in thousands of different projects and applications. The Arduino software is easy-to-use for beginners, yet flexible enough for advanced users. It runs on Mac, Windows, and Linux. Teachers and students use it to build low cost scientific instruments, to prove chemistry and physics principles, or to get started with programming and robotics
+
+Inexpensive - Arduino boards are relatively inexpensive compared to other microcontroller platforms. The least expensive version of the Arduino module can be assembled by hand, and even the pre-assembled Arduino modules cost less than \$50
+Cross-platform - The Arduino Software (IDE) runs on Windows, Macintosh OSX, and Linux operating systems. Most microcontroller systems are limited to Windows.
+Simple, clear programming environment - The Arduino Software (IDE) is easy-to-use for beginners, yet flexible enough for advanced users to take advantage of as well. For teachers, it's conveniently based on the Processing programming environment, so students learning to program in that environment will be familiar with how the Arduino IDE works.
+Open source and extensible software - The Arduino software is published as open source tools, available for extension by experienced programmers. The language can be expanded through C++ libraries, and people wanting to understand the technical details can make the leap from Arduino to the AVR C programming language on which it's based. Similarly, you can add AVR-C code directly into your Arduino programs if you want to.
+Open source and extensible hardware - The plans of the Arduino boards are published under a Creative Commons license, so experienced circuit designers can make their own version of the module, extending it and improving it. Even relatively inexperienced users can build the breadboard version of the module in order to understand how it works and save money.
+              
+         
+
+
+Analog Reference pin (orange)
+Digital Ground (light green)
+Digital Pins 2-13 (green)
+Digital Pins 0-1/Serial In/Out - TX/RX (dark green) - These pins cannot be used for digital i/o (digitalRead and digitalWrite) if you are also using serial communication (e.g. Serial.begin).
+Reset Button - S1 (dark blue)
+In-circuit Serial Programmer (blue-green)
+Analog In Pins 0-5 (light blue)
+Power and Ground Pins (power: orange, grounds: light orange)
+External Power Supply In (9-12VDC) - X1 (pink)
+Toggles External Power and USB Power (place jumper on two pins closest to desired supply) - SV1 (purple)
+USB (used for uploading sketches to the board and for serial communication between the board and the computer; can be used to power the board) (yellow)
+
+
+
+RaspBerry Pi:
+The Raspberry Pi is a low cost, credit-card sized computer that plugs into a computer monitor or TV, and uses a standard keyboard and mouse. It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Scratch and Python. It’s capable of doing everything you’d expect a desktop computer to do, from browsing the internet and playing high-definition video, to making spreadsheets, word-processing, and playing games.
+
+
+Infrared Sensor - IR Sensor
+ An infrared sensor (IR sensor) is a radiation-sensitive optoelectronic component with a spectral sensitivity in the infrared wavelength range 780 nm … 50 µm. IR sensors are now widely used in motion detectors, which are used in building services to switch on lamps or in alarm systems to detect unwelcome guests. In a defined angle range, the sensor elements detect the heat radiation (infrared radiation) that changes over time and space due to the movement of people. Such infrared sensors only have to meet relatively low requirements and are low-cost mass-produced items. InfraTec does not supply such products, InfraTec develops, produces and sells pyroelectric detectors.
+
+
+Pros and Cons of Raspberry Pi
+Pros
+Since it supports an operating system, It can perform complex operations like Weather monitoring, Controlling robots, etc.
+You can use it as a portable computer because it has everything- from CPU (Central Processing Unit) to ethernet port and WiFi support.
+It has a large number of GPIO (General-Purpose Input/Output) pins (the famous model of Raspberry Pi has 40 GPIO pins). Therefore, it can support a large number of sensors.
+It has superior processing power. The 4 B variant of Raspberry Pi comes with a 1.6 GHz processor.
+It can run all kinds of applications (including MS Office and Email).
+Cons
+Raspberry Pi”s hardware and software are closed-source. It means that you cannot customize your own Raspberry Pi single-board computer (SBC).
+Raspberry Pi does not have any internal storage, it requires a micro SD card to work as internal storage.
+It sometimes overheats during heavy operations.
+
+Pros and Cons of Arduino
+Pros
+Both hardware and software of Arduino are open-source. You have the liberty to select from the codes already available or you can customize your own Arduino board.
+It is less expensive than Raspberry Pi.
+It is good for beginners as it is easy to learn and use.
+It is quite easy to program Audrino through IDE (Integrated Development Environment).
+Arduino has a huge community and a wide range of applications.
+Cons
+It has very less processing power when compared to Raspberry Pi.
+Arduino boards do not support internet and wireless connectivity.
+8-bit CPU architecture
+Arduino is incapable of performing complex tasks.
+
+
+
