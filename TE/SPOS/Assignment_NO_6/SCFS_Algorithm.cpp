@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-  int n;                                                                                                  // no. of processes
+        int n;                                                                                                  // no. of processes
 	cout<<"enter number of processes";
 	cin>>n;
 
