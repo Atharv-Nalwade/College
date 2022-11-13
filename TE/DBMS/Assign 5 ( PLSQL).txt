@@ -1,0 +1,36 @@
+create table borrowe(rollno number(10),name varchar2(10),date_of_issue date,nameofbook varchar2(20), status varchar2(5));
+
+create table fin1(rollno number(10),date1 date,amount number(10));
+
+// Insert data into borrowe and date is '15-10-2022'
+
+
+// to_date is readymade func that is going to retrun diff
+// days is the refrence in the days
+// dual is teh by defaluut table available in plsql
+//The DUAL table is a special one-row, one-column table present
+//   by default in Oracle and other database installations
+
+
+declare 
+  	rno number(3):=&rno;
+	bname varchar2(30):='&bname';
+	no_of_days number(5);
+	issue_date date;
+	famnt number:=0;
+begin
+      select date_of_issue into issue_date from borrowe where rollno=rno;
+	select sysdate-to_date(issue_date) days into no_of_days from dual;
+	IF(no_of_days>15 and no_of_days<30) THEN
+		famnt:=no_of_days*5;
+      ELSIF (no_of_days)>30 THEN 
+		famnt:=15*5+(no_of_days-30)*50;
+	END IF;
+	UPDATE borrowe set status='R' where rollno=rno;
+      IF(famnt>0) THEN
+	  	INSERT INTO fin1 values(rno,sysdate,famnt);
+	END IF;
+	EXCEPTION 
+		WHEN no_data_found THEN 
+	      dbms_output.put_line('record not found');
+ END;
