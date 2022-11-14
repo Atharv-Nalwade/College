@@ -1,0 +1,22 @@
+// merging is done randomly
+create table o_table (rollno number(5),name varchar (20));
+create table n_table(roll number(5),name varchar(20));
+
+insert into o_table values (1,'atharv');
+
+insert into n_table values (3,'alok');
+
+declare
+	rno o_table.rollno%type;	
+	sname o_table.name%type;
+	cursor c1 is select rollno,name from o_table where rollno not in (select roll from n_table);
+begin
+	open c1;
+	loop
+	fetch c1 into rno,sname;
+	exit when c1%NOTFOUND;
+	insert into n_table values(rno,sname);
+	dbms_output.put_line('rno'||rno||'name'||sname);
+	end loop;
+	close c1;
+end
