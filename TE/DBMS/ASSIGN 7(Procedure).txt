@@ -1,0 +1,29 @@
+// replace =replace the old with new procedure
+// in is read only
+//exece proc_name(para to be passed)
+// is or as fo rlocal var decaration 
+// class is local var here 
+
+create table stud_marks(name varchar2(20),total_marks number);
+
+create table stud_result(roll number not null,name varchar2(50),class varchar2(10));
+
+insert into stud_marks values ('Atharv','1200');
+insert into stud_marks values ('Alok','700');
+
+CREATE OR REPLACE procedure proc_grade(rno number,name varchar2,tot_marks number) is
+ class varchar2(50);
+BEGIN 
+	if(tot_marks>=825 and tot_marks<=899) THEN
+	 class:='HSC';
+      elsif(tot_marks>=9000 and tot_marks<=989) THEN
+	 class:='FC';
+	elsif(tot_marks<=1500 and tot_marks>=990) THEN
+	 class:='Dist';
+	end if;
+	insert into stud_result values(rno,name,class);
+end;
+
+// for execution exec proc_grade(1,'Atharv',1200);	
+
+ 
