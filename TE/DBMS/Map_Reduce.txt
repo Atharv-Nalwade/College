@@ -1,0 +1,42 @@
+mmcoe@mmcoe-desktop:~$ mongo
+MongoDB shell version: 2.4.9
+connecting to: test
+> db.createCollection("mapmap")
+{ "ok" : 1 }
+> show collections
+Sportsmen
+abc
+college
+mapmap
+mmcoe
+system.indexes
+
+> db.mapmap.insert([{"name":"aaa","age":20},{"name":"bbb","age":25},{"name":"ccc","age":26},{"name":"ddd","age":27},{"name":"ccc","age":26},{"name":"ddd","age":27}])
+> db.mapmap.find()
+{ "_id" : ObjectId("57ac479af3f924d59242a6a6"), "name" : "aaa", "age" : 20 }
+{ "_id" : ObjectId("57ac4821f3f924d59242a6a7"), "name" : "bbb", "age" : 25 }
+{ "_id" : ObjectId("57ac4821f3f924d59242a6a8"), "name" : "ccc", "age" : 26 }
+{ "_id" : ObjectId("57ac4821f3f924d59242a6a9"), "name" : "ddd", "age" : 27 }
+{ "_id" : ObjectId("57ac4cc3f3f924d59242a6aa"), "name" : "ccc", "age" : 26 }
+{ "_id" : ObjectId("57ac4cc3f3f924d59242a6ab"), "name" : "ddd", "age" : 27 }
+
+> var mapFunction=function(){emit(this.name,this.age)}
+> var reduceFunction=function(keyname,valueage){return Array.sum(valueage)}
+> db.mapmap.mapReduce(mapFunction,reduceFunction,{out:"mrx"})
+{
+    "result" : "mrx",
+    "timeMillis" : 6,
+    "counts" : {
+        "input" : 6,
+        "emit" : 6,
+        "reduce" : 2,
+        "output" : 4
+    },
+    "ok" : 1,
+}
+> db.mrx.find()
+{ "_id" : "aaa", "value" : 20 }
+{ "_id" : "bbb", "value" : 25 }
+{ "_id" : "ccc", "value" : 52 }
+{ "_id" : "ddd", "value" : 54 }
+
