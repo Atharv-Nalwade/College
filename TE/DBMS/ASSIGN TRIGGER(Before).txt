@@ -1,0 +1,24 @@
+//BEFORE TRIGGER
+//:new.bno i psquedo random var
+// 
+
+create table library(bno number,name varchar2(20),author varchar2(20),allowed_days number);
+
+insert into library values(1,'DBMS','KORTH',5);
+insert into library valuea(2,'DM','Kamber',15);
+
+create table lib_audit (bno number,old_allowed_days varchar(20),new_all_days number);
+
+create or replace trigger t1 before update or delete on library
+for each row
+begin
+	insert into lib_audit values(:new.bno,:old.allowed_days,:new.allowed_days);
+end;
+
+// for execution
+  update library set allowed_days=2 where bno=3; // her enothign will happen as 3 is not present in teh table so triiger execute but no upadtion
+
+ update library set allowed_days=2 where bno=1;
+// old value inserted in lib audit table
+
+ 
