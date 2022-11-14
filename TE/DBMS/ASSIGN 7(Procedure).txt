@@ -25,5 +25,4 @@ BEGIN
 end;
 
 // for execution exec proc_grade(1,'Atharv',1200);	
-
- 
+// data is inserted in stud_result
