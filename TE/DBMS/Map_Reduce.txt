@@ -40,3 +40,4 @@ system.indexes
 { "_id" : "ccc", "value" : 52 }
 { "_id" : "ddd", "value" : 54 }
 
+// https://www.geeksforgeeks.org/mongodb-map-reduce/
