@@ -16,7 +16,7 @@ CREATE OR REPLACE procedure proc_grade(rno number,name varchar2,tot_marks number
 BEGIN 
 	if(tot_marks>=825 and tot_marks<=899) THEN
 	 class:='HSC';
-      elsif(tot_marks>=9000 and tot_marks<=989) THEN
+      elsif(tot_marks>=900 and tot_marks<=989) THEN
 	 class:='FC';
 	elsif(tot_marks<=1500 and tot_marks>=990) THEN
 	 class:='Dist';
